@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import contactActions from "../../redux/contacts-actions";
 import { getFilter } from "../../redux/contacts/selectors";
 import { changeFilter } from "../../redux/contacts/contacts-actions";
 

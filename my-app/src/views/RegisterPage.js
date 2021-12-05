@@ -5,6 +5,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
 
+const s = {
+  form: {
+    width: 320,
+    padding: 30,
+  },
+};
+
 function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -34,9 +41,9 @@ function RegisterPage() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} style={s.form}>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalName">
-        <Form.Label column sm={2}>
+        <Form.Label column sm={3}>
           Name
         </Form.Label>
         <Col sm={10}>
@@ -49,7 +56,7 @@ function RegisterPage() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
+        <Form.Label column sm={3}>
           Email
         </Form.Label>
         <Col sm={10}>
@@ -63,7 +70,7 @@ function RegisterPage() {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={2}>
+        <Form.Label column sm={3}>
           Password
         </Form.Label>
         <Col sm={10}>

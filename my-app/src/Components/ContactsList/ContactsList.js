@@ -2,9 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import s from "../ContactsList/ContactList.module.css";
 import { useSelector, useDispatch } from "react-redux";
-// import contactActions from "../../redux/contacts-actions";
 import { getVisibleContacts } from "../../redux/contacts/selectors";
-import { fetchContacts, deleteContact } from "../../redux/contacts/contacts-operations";
+import {
+  fetchContacts,
+  deleteContact,
+} from "../../redux/contacts/contacts-operations";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function ContactsList() {
   const contacts = useSelector(getVisibleContacts);
@@ -21,13 +25,13 @@ function ContactsList() {
           <p className={s.contact}>
             {name}: {number}
           </p>
-          <button
+          <Button
+            variant="outline-dark"
             type="button"
             onClick={() => dispatch(deleteContact(id))}
-            className={s.deleteBtn}
           >
             Delete
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

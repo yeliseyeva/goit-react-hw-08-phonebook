@@ -1,13 +1,4 @@
-// import ContactsList from "./Components/ContactsList/ContactsList";
-// import ContactForm from "./Components/ContactForm/ContactForm";
-// import Container from "./Components/Container/Container";
-// import Filter from "./Components/Filter/Filter";
 import { Routes, Route } from "react-router-dom";
-// import HomePage from "./views/HomePage";
-// import PhonebookPage from "./views/PhonebookPage";
-// import NavBar from "./Components/NavBar";
-// import LoginPage from "./views/LoginPage";
-// import RegisterPage from "./views/RegisterPage";
 import AppBar from "./Components/AppBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, Suspense, lazy } from "react";
@@ -38,8 +29,6 @@ function App() {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  
-
   return (
     !isFetchingCurrentUser && (
       <>
@@ -51,7 +40,6 @@ function App() {
               <Route path="/" element={<HomePage />} />
             </Route>
 
-
             <Route
               path="/contacts"
               element={<PrivateRoute redirectTo="/login" />}
@@ -59,18 +47,12 @@ function App() {
               <Route path="/contacts" element={<PhonebookPage />} />
             </Route>
 
-            
-
-
-
             <Route
               path="/register"
               element={<PublicRoute redirectTo="/contacts" restricted />}
             >
               <Route path="/register" element={<RegisterPage />} />
             </Route>
-
-            
 
             <Route
               path="/login"
@@ -87,11 +69,6 @@ function App() {
 
 export default App;
 
-
-
-<Route
-              path="/phonebook"
-              element={<PrivateRoute redirectTo="/login" />}
-            >
-              <Route path="/phonebook" element={<PhonebookPage />} />
-            </Route>
+<Route path="/phonebook" element={<PrivateRoute redirectTo="/login" />}>
+  <Route path="/phonebook" element={<PhonebookPage />} />
+</Route>;
