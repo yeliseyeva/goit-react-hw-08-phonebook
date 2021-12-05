@@ -9,8 +9,18 @@ import NavBar from "./Components/NavBar";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
 import AppBar from "./Components/AppBar";
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import authOperations from "./redux/auth/auth-operations";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
 

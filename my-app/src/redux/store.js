@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import contactsReducer from "./contacts/contacts-reducer";
 import authReducer  from './auth/auth-slice';
 import {
-  //persistStore,
+  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
@@ -39,7 +39,7 @@ const store = configureStore({
   devTools: process.env.NODE_ENV === "development",
 });
 
-//const persistor = persistStore(store);
+const persistor = persistStore(store);
 
 // eslint-disable-next-line
-export { store };
+export { store, persistor };
