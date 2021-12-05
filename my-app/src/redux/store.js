@@ -27,8 +27,9 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: { 
+    auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
-    auth: persistReducer(authPersistConfig, authReducer)
+    
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
