@@ -3,6 +3,7 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
+import authOperations from '../redux/auth/auth-operations'
 
 function LoginPage() {
 
@@ -24,7 +25,9 @@ function LoginPage() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // dispatch(authOperations.logIn({ email, password }));
+    dispatch(authOperations.logIn({ email, password }));
+
+    console.log('Вход віполнен')
     setEmail('');
     setPassword('');
   }

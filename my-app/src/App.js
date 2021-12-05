@@ -8,12 +8,13 @@ import PhonebookPage from "./views/PhonebookPage";
 import NavBar from "./Components/NavBar";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
+import AppBar from "./Components/AppBar";
 
 function App() {
   return (
     <>
 
-    <NavBar />
+    <AppBar />
 
     <Routes>
       <Route path="/" element={<HomePage/>}/>

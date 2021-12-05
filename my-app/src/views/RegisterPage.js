@@ -3,6 +3,7 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import authOperations from '../redux/auth/auth-operations';
 
 function RegisterPage() {
   const [name, setName] = useState('');
@@ -25,7 +26,8 @@ function RegisterPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(authOperations.register({ name, email, password }));
+    dispatch(authOperations.register({ name, email, password }));
+    console.log('Зарегистрировали')
     setName('');
     setEmail('');
     setPassword('');

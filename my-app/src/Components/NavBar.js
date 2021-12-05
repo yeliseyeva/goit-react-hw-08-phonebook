@@ -10,13 +10,13 @@ function NavBar () {
         <NavLink to="/contacts">
             Phonebook
         </NavLink>
-
+{/* 
         <NavLink to="/register">
             SIGN UP
         </NavLink>
         <NavLink to="/login">
             LOG IN
-        </NavLink>
+        </NavLink> */}
 
         </>
     )
